@@ -1,0 +1,41 @@
+#quizPage {
+    display: none;
+  }
+
+#startPage {
+    display: block;
+}
+
+#scorePage {
+  display: none;
+}
+
+#highScorePage {
+  display: none;
+}
+
+.container {
+  width: 960px;
+  max-width: 80%;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+#quizDisplay {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.choice-button-style {
+  background-color: #0EBFE9;
+  border: 1px solid rgb(13, 180, 221);
+  border-radius: 2px;
+  color: white; 
+  padding: 10px 24px;
+  margin-top: 5px;
+  width: 180px;
+  display: block;
+}
+

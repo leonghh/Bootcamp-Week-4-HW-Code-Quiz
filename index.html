@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/CSS/style.css" />
+  <title>Quiz</title>
+</head>
+
+<body>
+  <!-- header with view highscore and timer-->
+  <nav class="navbar navbar-expand-xs navbar-light bg-light">
+    <a id="highScorebtn" class="navbar-brand" href="#">View Highscore</a>
+    <div id="timer" class="mr-5"></div>
+  </nav>
+
+  <!-- Start Page -->
+  <div id="startPage" class="container mt-3">
+    <div class="jumbotron">
+      <h1 class="display-4">Hello, fellow coders!</h1>
+      <p class="lead">The test contains 10 questions and it will last 150 seconds. This test is just a nice way to see
+        how much you know, or don't know about computer coding.</p>
+      <hr class="my-4">
+      <p>You will get 1 point for each correct answer. Each incorrect answer will deduct the timer by 15 seconds. At the
+        end of
+        the quiz, your remaining time will be counted in your score. Your score will then be displayed and you can
+        submit it to the highscore.</p>
+      <p class="lead">
+        <a id="startBtn" class="btn btn-primary btn-lg" href="#" role="button">Start Quiz</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- quiz container -->
+
+  <div id="quizPage" class="container mt-3">
+    <div id="quizDisplay"></div>
+    <div id="buttons"></div>
+    <hr>
+    <div id="resultDisplay"></div>
+  </div>
+
+  <!-- submit score container -->
+
+  <div id="scorePage" class="container mt-3">
+    <h1>Quiz Completed!</h1>
+    <div>Your score is: <span id="userResult"></span></div>
+    <form class="form-inline">
+      <div class="form-group mb-2">
+        <input type="text" readonly class="form-control-plaintext" value="Enter Initials">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <input id="userInitial" type="text" class="form-control" id="inputInitials" maxlength="3"
+          style="text-transform:uppercase" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+      </div>
+      <button type="submit" id="submitBtn" class="btn btn-primary mb-2">Submit</button>
+    </form>
+  </div>
+
+  <!-- highscore container -->
+  <div id="highScorePage" class="container mt-3">
+    <h1>Highscore</h1>
+    <p>Times Played: <span id="timesPlayed">0</span></p>
+    <ol id="highScoreList" class="container"></ol>
+    <div id="controls" class="container">
+      <button id="restartBtn" class="btn btn-primary mb-2">Go back</button>
+      <button id="clearBtn" class="btn btn-primary mb-2">Clear highscore</button>
+    </div>
+  </div>
+
+
+  <script src="./assets/JS/script.js"></script>
+
+</body>
+
+</html>
