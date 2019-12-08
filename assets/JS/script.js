@@ -75,7 +75,7 @@ var userInitial = document.getElementById("userInitial");
 var submitBtn = document.getElementById("submitBtn");
 var highScoreList = document.getElementById("highScoreList")
 var timesPlayedCount = document.getElementById("timesPlayed")
-var restartBtn = document.getElementById("restartBtn"); 
+var restartBtn = document.getElementById("restartBtn");
 var clearBtn = document.getElementById("clearBtn");
 
 var highscores = [];
@@ -99,7 +99,7 @@ startBtn.addEventListener("click", function () {
     renderQuestion();
 });
 
-function renderQuestion() { 
+function renderQuestion() {
     if (currentQuestionIndex == questions.length) {
         displayResult()
     }
@@ -112,7 +112,7 @@ function renderQuestion() {
         button.innerText = questions[currentQuestionIndex].choices[i]
         button.classList.add("choice-button-style", "choiceBtn")
         button.addEventListener('click', selectAnswer)
-        choiceList.appendChild(button)    
+        choiceList.appendChild(button)
     }
 }
 
@@ -149,7 +149,6 @@ function selectAnswer() {
         resultDisplay.innerHTML = "Correct!";
         currentQuestionIndex++;
         renderQuestion();
-        return;
     }
     else {
         // remainingSeconds--
@@ -173,17 +172,17 @@ function displayResult() {
     userResult.innerHTML = finalScore;
 }
 
-        // If there IS a nextQuestionIndex. (nextQuestionIndex = currentQuestionIndex + 1)
+// If there IS a nextQuestionIndex. (nextQuestionIndex = currentQuestionIndex + 1)
 
-        // If nextQuestionIndex == (question.length -1).
-        // Get the next question (nextQuestion = questions[nextQuestionIndex])
-        // render(nextQuestion)
+// If nextQuestionIndex == (question.length -1).
+// Get the next question (nextQuestion = questions[nextQuestionIndex])
+// render(nextQuestion)
 
-        // Else, means last question ALREADY finished
-        // stopTimer
-        // If remainingSeconds
-        // Add remainingSeconds to score
-        // saveCurrentScore(initial)
+// Else, means last question ALREADY finished
+// stopTimer
+// If remainingSeconds
+// Add remainingSeconds to score
+// saveCurrentScore(initial)
 
 
 // function renderTimer() {
@@ -200,7 +199,7 @@ function renderTimer() {
         if (currentQuestionIndex == questions.length) {
             clearInterval(timerInterval);
         }
-        highScorebtn.addEventListener("click", function() {
+        highScorebtn.addEventListener("click", function () {
             clearInterval(timerInterval);
         });
 
@@ -226,10 +225,10 @@ function renderUserHighScore() {
         highScoreList.appendChild(li)
     }
 }
-    // var userInitial = localStorage.getItem("userInitial");
-    // var finalScore = localStorage.getItem("finalScore");
+// var userInitial = localStorage.getItem("userInitial");
+// var finalScore = localStorage.getItem("finalScore");
 
-    // highScoreList.innerHTML = userInitial + " - " + finalScore;
+// highScoreList.innerHTML = userInitial + " - " + finalScore;
 // }
 
 
@@ -238,9 +237,9 @@ function init() {
 
     if (storedHighScores !== null) {
         highscores = storedHighScores;
-      }
+    }
 
-      renderUserHighScore();
+    renderUserHighScore();
 }
 
 function storeHighScores() {
@@ -249,7 +248,7 @@ function storeHighScores() {
 
 
 
-submitBtn.addEventListener("click", function() {
+submitBtn.addEventListener("click", function () {
     scorePage.style.display = "none";
     highScorePage.style.display = "block";
     event.preventDefault();
@@ -267,22 +266,22 @@ submitBtn.addEventListener("click", function() {
 });
 
 
-    // var userInitial = document.getElementById("userInitial").value.toUpperCase();
-    // if (userInitial === "") {
-    //     alert("Please type in your initials");
-    //   }
+// var userInitial = document.getElementById("userInitial").value.toUpperCase();
+// if (userInitial === "") {
+//     alert("Please type in your initials");
+//   }
 
-    // localStorage.setItem("userInitial", userInitial);
-    // renderUserHighScore();
+// localStorage.setItem("userInitial", userInitial);
+// renderUserHighScore();
 // });
 
-restartBtn.addEventListener("click", function() {
+restartBtn.addEventListener("click", function () {
     highScorePage.style.display = "none";
     startPage.style.display = "block";
     location.reload();
 });
 
-clearBtn.addEventListener("click", function() {
+clearBtn.addEventListener("click", function () {
     timesPlayedCount.textContent = "0";
     localStorage.clear();
     var div = document.getElementById('highScoreList');
@@ -291,7 +290,7 @@ clearBtn.addEventListener("click", function() {
     }
 });
 
-highScorebtn.addEventListener("click", function() {
+highScorebtn.addEventListener("click", function () {
     showHighScorePage()
 });
 
